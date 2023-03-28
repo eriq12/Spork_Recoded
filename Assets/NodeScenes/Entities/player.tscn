@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf2akkeiwo201"]
+
+[ext_resource type="Script" path="res://Scripts/Entity/entity.gd" id="1_fpwe0"]
+[ext_resource type="Texture2D" uid="uid://drov6p45jcxc1" path="res://Assets/Textures/Entities/Template.png" id="2_erjdd"]
+
+[node name="Player" type="Node2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_fpwe0")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_erjdd")
+hframes = 4
+vframes = 4
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(4, 4)

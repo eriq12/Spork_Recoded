@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c33af6f3h8w3g"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Management/level_manager.gd" id="1_rlv11"]
+[ext_resource type="PackedScene" uid="uid://b0il0agslfqvl" path="res://Assets/NodeScenes/Levels/test_level.tscn" id="2_p8mdc"]
+
+[node name="LevelManager" type="Node"]
+script = ExtResource("1_rlv11")
+default_scene = ExtResource("2_p8mdc")

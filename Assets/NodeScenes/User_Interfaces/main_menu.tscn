@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsn6em1h8fv7e"]
+
+[ext_resource type="Script" path="res://Scripts/User_Interfaces/main_menu.gd" id="1_0trag"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0trag")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = 200.0
+offset_right = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ContinueGame" type="Button" parent="Options"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../NewGame")
+text = "Continue"
+
+[node name="NewGame" type="Button" parent="Options"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ContinueGame")
+text = "New Game"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Options/NewGame" to="." method="_on_new_game_pressed"]

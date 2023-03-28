@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://kto6bcou6hpa"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Management/Player_Control/player_input_map.gd" id="1_x6eio"]
+
+[node name="PlayerInputMap" type="Node"]
+script = ExtResource("1_x6eio")

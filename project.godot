@@ -22,6 +22,10 @@ LevelManager="*res://Assets/NodeScenes/Game_Management/level_manager.tscn"
 PartyUI="*res://Assets/NodeScenes/User_Interfaces/party_ui.tscn"
 ControllerHandler="*res://Scripts/Game_Management/Player_Control/controller_handler.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [input]
 
 ui_accept={

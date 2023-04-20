@@ -25,7 +25,7 @@ var player_character : Entity:
 
 func _ready():
 	# initialize player_state
-	for i in range(ControllerHandler.MAX_PLAYERS):
+	for i in range(ControllerHandler.player_input_maps.size()):
 		player_states.append(State.NONE)
 	for children in $States.get_children():
 		state_module_parents.append(children)

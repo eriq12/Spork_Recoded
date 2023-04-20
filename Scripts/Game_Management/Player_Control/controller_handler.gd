@@ -3,15 +3,14 @@ extends Node
 signal player_device_update(player_id)
 signal player_device_removed(player_id)
 
-const MAX_PLAYERS : int = 4
+const DEFAULT_MAX_PLAYERS : int = 4
 var player_input_maps : Array[PlayerInputMap]
 var device_id_to_player : Dictionary
 
 func _ready():
 	# initalize player_input_maps
-	player_input_maps.resize(MAX_PLAYERS)
+	player_input_maps.resize(DEFAULT_MAX_PLAYERS)
 	player_input_maps.fill(null)
-	set_process_unhandled_input(false)
 
 func _unhandled_input(event):
 	if event is InputEventJoypadButton:
@@ -25,7 +24,6 @@ func _unhandled_input(event):
 			player_input_maps[device_id_to_player[event.device]].set_joy_motion(event.axis, event.axis_value)
 		get_viewport().set_input_as_handled()
 
-
 func _add_player_device(device_id : int) -> bool:
 	for i in range(player_input_maps.size()):
 		if player_input_maps[i] == null:
@@ -34,7 +32,7 @@ func _add_player_device(device_id : int) -> bool:
 	return false
 
 func get_player_input_map(player_id : int) -> PlayerInputMap:
-	if player_id >= 0 and player_id < MAX_PLAYERS:
+	if player_id >= 0 and player_id < DEFAULT_MAX_PLAYERS:
 		return player_input_maps[player_id]
 	return null
 

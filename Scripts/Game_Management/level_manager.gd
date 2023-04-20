@@ -46,10 +46,6 @@ func _deferred_goto_scene(new_scene):
 	# make compatible with SceneTreee.change_scene_to_file() API
 	get_tree().current_scene = current_scene
 
-	# if it is any other scene than the main menu, then enable the controller handler
-	if current_scene != main_menu_scene:
-		ControllerHandler.set_process_unhandled_input(true)
-
 # helper method to load level
 func _deferred_goto_level(level, position:Vector2i=Vector2i.ZERO):
 	_deferred_goto_scene(level)
@@ -69,3 +65,7 @@ func is_position_open(position : Vector2i) -> bool:
 	if not current_scene == null:
 		return current_scene.is_grid_position_open(position)
 	return false
+
+## method to find whether game is in main menu
+func is_in_main_menu() -> bool:
+	return current_scene.is_instance_of(default_scene)

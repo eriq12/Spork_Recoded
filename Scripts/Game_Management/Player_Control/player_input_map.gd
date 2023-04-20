@@ -31,7 +31,7 @@ var joy_r : Vector2 = Vector2.ZERO
 
 #endregion
 
-#finite state machine module object
+##finite state machine module object
 var module : StateModule
 
 func _init():
@@ -43,6 +43,7 @@ func _init():
 #region processing input
 func _ready():
 	pass
+
 func _process(_delta):
 	if module != null:
 		module.process(self)
